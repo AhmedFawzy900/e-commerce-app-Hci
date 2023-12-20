@@ -22,6 +22,7 @@ const Orders = ({ ordersData, setAllOrders, cancel_Order }) => {
         .then(data => {
             // setOrders(data.filter(order => order.user_id === user.id));
             setAllOrders(data.filter(order => order.user_id === user.id));
+            calcTotal();
             console.log(ordersData);
         })
         .catch(error => console.error('Error fetching orders:', error));
@@ -74,67 +75,6 @@ const handleOrderCancellation =(orderId,cancel_Order) => {
   
     const cancelOrder = (orderId) => {
             handleOrderCancellation(orderId,cancel_Order);
-
-      // Find the order by orderId and set its status to 'cancelled'
-    //  const orderIndex = ordersData.findIndex(order => order.id === orderId);
-    // cancel_Order(orderId);
-    //   Swal.fire({
-    //     title: `Do you want to Cancel this order?`,
-    //     showDenyButton: true,
-    //     confirmButtonText: 'yes',
-    //   }).then((result) => {
-    //     if (result.isConfirmed) {
-
-    //         if (orderIndex !== -1) {
-    //             fetch(`http://localhost:9000/orders/${orderId}`, {
-    //               method: 'Delete',
-    //             })
-    //             .then(response => response.json())
-    //             .then(data => console.log('Order cancelled:', data))
-    //             .catch(error => console.error('Error cancelling order:', error));
-    //           } else {
-    //             console.error('Order not found');
-    //           }
-    //           Swal.fire({
-    //             position: 'center',
-    //             icon: 'success',
-    //             title: 'canceled successfully',
-    //             showConfirmButton: false,
-    //             timer: 1500
-    //           })
-    //     }
-    //   });
-        // Swal.fire({
-        //     title: `Do you want to Cancel this order?`,
-        //     showDenyButton: true,
-        //     confirmButtonText: 'yes',
-        // }).then((result) => {
-        //     if (result.isConfirmed) {
-        //     if (orderIndex !== -1) {
-        //         fetch(`http://localhost:9000/orders/${orderId}`, {
-        //         method: 'Delete',
-        //         })
-        //         .then((response) => response.json())
-        //         .then((data) => {
-        //             console.log('Order cancelled:', data);
-        //             // Dispatch the cancelOrder action
-        //             cancel_Order(orderId);
-        //         })
-        //         .catch((error) => console.error('Error cancelling order:', error));
-        //     } else {
-        //         console.error('Order not found');
-        //     }
-        //     Swal.fire({
-        //         position: 'center',
-        //         icon: 'success',
-        //         title: 'canceled successfully',
-        //         showConfirmButton: false,
-        //         timer: 1500,
-        //     });
-        //     }
-        // });
-        // };
-        // cancel_Order(orderId);
     }
     return( 
         <>
@@ -190,7 +130,7 @@ const handleOrderCancellation =(orderId,cancel_Order) => {
                         </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        {/* <div class="col-md-4">
                             <div class="card mb-4">
                             <div class="card-header py-3">
                                 <h5 class="mb-0">Summary</h5>
@@ -219,7 +159,7 @@ const handleOrderCancellation =(orderId,cancel_Order) => {
                                 </ul>
                             </div>
                             </div>
-                        </div>
+                        </div> */}
                         </div>
                 </div>
             </section>
