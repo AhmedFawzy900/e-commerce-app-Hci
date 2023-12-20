@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce",
+  "name": "e-commerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,7 +26,7 @@
     "swiper": "^11.0.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://AhmedFawzy900.github.io/e-commerce-app-Hci",
+  "homepage": "https://ahmedfawzy900.github.io/e-commerce-app-Hci/",
  
   "scripts": {
     "predeploy": "npm run build",
